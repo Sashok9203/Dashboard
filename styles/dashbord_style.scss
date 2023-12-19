@@ -1,0 +1,225 @@
+@import 'common';
+
+.content {
+
+    a:hover {
+        cursor: pointer;
+    }
+
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: 20px;
+        row-gap: 40px;
+        padding: 40px 0;
+
+        #green {
+            background-color: green;
+        }
+
+        #yellow {
+            background-color: rgb(228, 185, 65);
+        }
+
+        #blue {
+            background-color: blue;
+        }
+
+        #red {
+            background-color: red;
+        }
+
+
+        @media screen and (min-width:$LowScreenWidth) and (max-width:$MaxScreenWidth) {
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        @media screen and (max-width:$LowScreenWidth) {
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        @media screen and (max-width:$LowestScreenWidth) {
+            grid-template-columns: 1fr;
+        }
+
+
+        .text-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .info-link {
+            display: flex;
+            gap: 5px;
+            margin-top: 15px;
+            align-items: center;
+
+            a {
+                font-size: 11px;
+                color: rgb(163, 162, 162);
+            }
+
+            img {
+                height: 13px;
+            }
+        }
+
+        .info {
+            @extend %infoGridElement;
+            grid-column: span 3;
+            min-width: 180px;
+
+            @media screen and (min-width:$LowScreenWidth) and (max-width:$MaxScreenWidth) {
+                grid-column: span 3;
+            }
+
+            @media screen and (max-width:$LowScreenWidth) {
+                grid-column: span 3;
+            }
+
+            @media screen and (max-width:$LowestScreenWidth) {
+                grid-column: span 1;
+            }
+
+            .info-block {
+                @extend %flexSBetween;
+
+                .image-box {
+                    @extend %colorBox;
+                    text-align: center;
+                    width: 40px;
+                }
+            }
+
+            .text-info {
+                .title {
+                    font-size: 12px;
+                    margin-bottom: 10px;
+                    color: gray;
+                }
+
+                .value {
+                    font-size: 25px;
+                    font-weight: lighter;
+                }
+            }
+
+        }
+
+        .stat {
+            @extend %infoGridElement;
+            grid-column: span 4;
+
+            @media screen and (min-width:$LowScreenWidth) and (max-width:$MaxScreenWidth) {
+                grid-column: span 2;
+            }
+
+            @media screen and (max-width:$LowScreenWidth) {
+                grid-column: span 6;
+            }
+
+            @media screen and (max-width:$LowestScreenWidth) {
+                grid-column: span 1;
+            }
+
+            .text-info {
+                align-items: flex-start;
+                flex-direction: column-reverse;
+
+                .value {
+                    font-size: 23px;
+                    color: rgb(105, 105, 105);
+                    margin-bottom: 5px;
+                }
+
+                .title {
+                    font-size: 14px;
+                    color: rgb(105, 105, 105);
+                    margin-bottom: 5px;
+                }
+            }
+
+        }
+
+        .block {
+            @extend %infoGridElement;
+            grid-column: span 6;
+
+            @media screen and (max-width:$LowestScreenWidth) {
+                grid-column: span 1;
+            }
+
+            hr {
+                margin: 15px 0;
+            }
+
+            table {
+                @extend %SpaceClear;
+                width: 100%;
+                text-align: center;
+                border-collapse: collapse;
+
+                th {
+                    @extend %buttomLine;
+                    color: aqua;
+                }
+
+                td {
+                    @extend %buttomLine;
+                }
+            }
+
+
+            .block-menu {
+                display: flex;
+                flex-direction: row;
+                padding: 0;
+                gap: 10px;
+                color: white;
+                font-size: 15px;
+                align-items: center;
+
+                .block-menu-item {
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                    padding: 10px;
+
+                    &:hover,
+                    &:nth-child(2) {
+                        background-color: rgb(241, 196, 73);
+                    }
+                }
+            }
+
+            .bug-info {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                text-align: left;
+                gap: 15px;
+
+                span {
+                    flex-shrink: 1;
+                    flex-grow: 1;
+                }
+
+                .image-block {
+                    display: flex;
+                    width: auto;
+                    flex-shrink: 0;
+
+                    img {
+                        margin-right: 25px;
+                        flex-wrap: nowrap;
+                        height: 25px;
+                    }
+
+                }
+            }
+
+        }
+    }
+
+}

@@ -1,0 +1,144 @@
+@import 'common';
+
+
+$EditTextColor: rgb(182, 181, 181);
+$ImageTop: -60px;
+
+%ClearInput {
+    outline: none;
+    border: none;
+}
+
+
+.content {
+
+    #brown {
+        background-color: $MenuSellectColor;
+    }
+
+    .user-profile {
+        @extend %flexSBetween;
+        gap: 20px;
+        margin: 40px 0;
+        min-width: 350px;
+
+        @media screen and (max-width:$MaxScreenWidth) {
+            flex-direction: column;
+
+        }
+
+        .user-edit {
+            @extend %infoGridElement;
+            flex-basis: 65%;
+            display: flex;
+            flex-direction: column;
+
+            @media screen and (max-width:$MaxScreenWidth) {
+                order: 2;
+            }
+
+
+            .title {
+                display: inline-block;
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .edit-data {
+                min-width: 300px;
+                display: grid;
+                gap: 20px;
+                grid-template-columns: repeat(6, 1fr);
+
+                .span-two {
+                    grid-column: span 2;
+
+                }
+
+                .span-three {
+                    grid-column: span 3;
+
+                }
+
+                .span-six {
+                    grid-column: span 6;
+
+                }
+
+                label {
+                    display: block;
+                    font-size: 13px;
+                    color: gray;
+                    margin-bottom: 10px;
+                }
+
+                input {
+                    @extend %ClearInput;
+                    box-sizing: border-box;
+                    width: 100%;
+                    border-bottom: 1px solid $EditTextColor;
+                    font-size: 15px;
+                }
+
+                textarea {
+                    @extend %ClearInput;
+                    box-sizing: border-box;
+                    width: 100%;
+                    height: 50px;
+                    border-bottom: 1px solid $EditTextColor;
+                }
+            }
+
+            button {
+                color: white;
+                font-weight: bold;
+                background-color: $MenuSellectColor;
+                align-self: flex-end;
+                font-size: 16px;
+                width: 200px;
+                border: none;
+                padding: 10px;
+                margin-top: 15px;
+                text-wrap: nowrap;
+            }
+
+        }
+
+        .info {
+            @extend %infoGridElement;
+            flex-basis: 35%;
+            min-width: 200px;
+            text-align: center;
+            height: 100%;
+            position: relative;
+
+            @media screen and (max-width:$MaxScreenWidth) {
+                order: 1;
+            }
+
+            img {
+
+                position: absolute;
+                top: -50px;
+                right: calc(50% - 75px);
+                box-sizing: border-box;
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.3);
+            }
+
+            .text-info {
+                margin-top: 100px;
+
+                h1 {
+                    color: $EditTextColor;
+                    font-weight: lighter;
+                }
+            }
+
+        }
+
+    }
+
+}

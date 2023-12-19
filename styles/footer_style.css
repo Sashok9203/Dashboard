@@ -1,0 +1,22 @@
+footer .bottom-menu, footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer {
+  padding: 10px;
+  color: gray;
+  align-items: center;
+}
+footer .bottom-menu {
+  align-items: center;
+  gap: 15px;
+}
+footer .bottom-menu a {
+  color: rgb(78, 77, 77);
+  font-size: 12px;
+  font-weight: bolder;
+}
+footer .bottom-menu a:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=footer_style.css.map */

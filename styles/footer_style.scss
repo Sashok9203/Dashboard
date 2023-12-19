@@ -1,0 +1,30 @@
+%flexSBetween {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+footer {
+    @extend %flexSBetween;
+    padding: 10px;
+    color: gray;
+    align-items: center;
+
+    .bottom-menu {
+        @extend %flexSBetween;
+        align-items: center;
+        gap: 15px;
+
+        a {
+            color: rgb(78, 77, 77);
+            font-size: 12px;
+            font-weight: bolder;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+
+    }
+}

@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  gap: 10px;
+}
+.header h3 {
+  margin: 0;
+}
+.header img {
+  display: none;
+  height: 14px;
+  vertical-align: middle;
+}
+@media screen and (max-width: 800px) {
+  .header img {
+    display: block;
+  }
+}/*# sourceMappingURL=header_style.css.map */

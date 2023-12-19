@@ -1,0 +1,49 @@
+@import 'menu_style';
+@import 'header_style';
+@import 'footer_style';
+
+$ContentLRPadding: 40px;
+$ContentUDPadding: 20px;
+
+%infoGridElement {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    box-shadow: 4px 4px 3px 0px rgba(0, 0, 0, 0.2);
+
+}
+
+%colorBox {
+    position: relative;
+    top: -30px;
+    padding: 15px;
+
+}
+
+%buttomLine {
+    border-bottom: 1px solid rgb(117, 117, 117);
+    padding: 10px 0;
+}
+
+%flexSBetween {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.content {
+    z-index: 0;
+    padding: $ContentUDPadding $ContentLRPadding $ContentUDPadding $ContentLRPadding + $MenuWidth;
+
+    @media screen and (max-width:800px) {
+        padding-left: $ContentLRPadding;
+    }
+
+    .graphic-box {
+        @extend %colorBox;
+        color: white;
+
+        img {
+            width: 100%;
+        }
+    }
+}

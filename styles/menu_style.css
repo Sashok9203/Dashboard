@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(206, 205, 205);
+}
+
+.menu {
+  z-index: 1;
+  position: fixed;
+  height: 100%;
+  flex-shrink: 0;
+  width: 200px;
+  background-color: rgb(226, 224, 224);
+  box-shadow: 2px 0px 3px 0px rgba(0, 0, 0, 0.2);
+}
+.menu h3 {
+  padding: 5px 25px;
+}
+.menu nav {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.menu nav a {
+  text-decoration: none;
+  padding: 10px;
+  color: gray;
+  font-size: 14px;
+}
+.menu nav a img {
+  width: 25px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.menu nav .checked {
+  background-color: brown;
+  color: white;
+}
+@media screen and (max-width: 800px) {
+  .menu {
+    display: none;
+  }
+}/*# sourceMappingURL=menu_style.css.map */
